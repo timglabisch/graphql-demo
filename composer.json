@@ -1,0 +1,10 @@
+{
+    "require": {
+        "webonyx/graphql-php": "^0.9.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tg\\EasyGraphApi\\": "src/"
+        }
+    }
+}
