@@ -16,10 +16,29 @@ $typeRegistry = new GraphTypeRegistry();
 $schema = new Schema(
     [
         'query' => $typeRegistry->getTypeQuery(),
+        'mutation' => $typeRegistry->getMutationType(),
     ]
 );
 
 $input = [
+
+    'mutation' => '
+    
+        mutation {
+            document_create(
+                document: {
+                    documentID: "a",
+                    title: "b"
+                }
+            ) {
+                title
+                document_type
+            }
+        }
+    
+    ',
+
+
     'query' => '
     
         query {
@@ -39,6 +58,7 @@ $input = [
 $resolver = new RequirementResolver();
 
 $context = new Context($resolver);
-$result = GraphQL::execute($schema, $input['query'], null, $context, $input['variables']);
+//$result = GraphQL::execute($schema, $input['query'], null, $context, $input['variables']);
+$result = GraphQL::execute($schema, $input['mutation'], null, $context, $input['variables']);
 
 var_dump($result);

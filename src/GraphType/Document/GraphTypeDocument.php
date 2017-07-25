@@ -38,4 +38,4 @@ class GraphTypeDocument extends ObjectType
         );
     }
 
-};
+}

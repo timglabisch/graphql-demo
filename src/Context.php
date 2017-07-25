@@ -2,7 +2,7 @@
 
 namespace Tg\EasyGraphApi;
 
-use Tg\EasyGraphApi\Requirement\Document\ResolveableInterface;
+use Tg\EasyGraphApi\Requirement\ResolveableInterface;
 
 class Context
 {
