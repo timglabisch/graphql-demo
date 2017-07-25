@@ -3,20 +3,17 @@
 use GraphQL\GraphQL;
 use GraphQL\Schema;
 use Tg\EasyGraphApi\Context;
-use Tg\EasyGraphApi\GraphTypeRegistry;
+use Tg\EasyGraphApi\Graph\GraphMutationType;
+use Tg\EasyGraphApi\Graph\GraphQueryType;
 use Tg\EasyGraphApi\RequirementResolver;
 
 require __DIR__ . '/vendor/autoload.php';
 
 
-
-$typeRegistry = new GraphTypeRegistry();
-
-
 $schema = new Schema(
     [
-        'query' => $typeRegistry->getTypeQuery(),
-        'mutation' => $typeRegistry->getMutationType(),
+        'query' => GraphQueryType::getType(),
+        'mutation' => GraphMutationType::getType(),
     ]
 );
 
