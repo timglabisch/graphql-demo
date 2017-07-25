@@ -8,18 +8,21 @@ use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Tg\EasyGraphApi\Context;
 use Tg\EasyGraphApi\GraphTypeRegistry;
+use Tg\EasyGraphApi\Helper\SingletonTrait;
 use Tg\EasyGraphApi\Requirement\Document\DocumentRequirement;
 
 class MutationDocument extends ObjectType
 {
-    public function __construct(GraphTypeRegistry $typeRegistry)
+    use SingletonTrait;
+
+    public function __construct()
     {
         parent::__construct([
             'name' => 'documentx',
             'fields' => [
                 'create' => [
-                    'type' => $typeRegistry->getTypeDocument(),
-                    'args' => ['document' => ['type' => Type::nonNull($typeRegistry->getDocumentMutationType())]],
+                    'type' => GraphTypeDocument::getType(),
+                    'args' => ['document' => ['type' => Type::nonNull(CreateDocumentMutationType::getType())]],
                 ]
             ],
             'resolveField' => function($val, $args, Context $context, ResolveInfo $info) {

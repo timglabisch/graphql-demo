@@ -7,10 +7,13 @@ use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Tg\EasyGraphApi\Context;
 use Tg\EasyGraphApi\GraphTypeRegistry;
+use Tg\EasyGraphApi\Helper\SingletonTrait;
 
 class CreateDocumentMutationType extends InputObjectType
 {
-    public function __construct(GraphTypeRegistry $typeRegistry)
+    use SingletonTrait;
+
+    public function __construct()
     {
         parent::__construct(
             [
