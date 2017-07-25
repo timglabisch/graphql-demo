@@ -4,6 +4,7 @@ namespace Tg\EasyGraphApi;
 
 use Tg\EasyGraphApi\GraphType\Document\CreateDocumentMutationType;
 use Tg\EasyGraphApi\GraphType\Document\GraphTypeDocument;
+use Tg\EasyGraphApi\GraphType\Document\MutationDocument;
 use Tg\EasyGraphApi\GraphType\MutationGraphType;
 use Tg\EasyGraphApi\GraphType\QueryGraphType;
 
@@ -18,6 +19,8 @@ class GraphTypeRegistry
     private $documentMutationType;
 
     private $mutationType;
+
+    private $documentMutation;
 
     public function getTypeQuery()
     {
@@ -37,5 +40,10 @@ class GraphTypeRegistry
     public function getDocumentMutationType()
     {
         return $this->documentMutationType ?: ($this->documentMutationType = new CreateDocumentMutationType($this));
+    }
+
+    public function getDocumentMutation()
+    {
+        return $this->documentMutation ?: ($this->documentMutation = new MutationDocument($this));
     }
 }

@@ -25,14 +25,16 @@ $input = [
     'mutation' => '
     
         mutation {
-            document_create(
-                document: {
-                    documentID: "a",
-                    title: "b"
+            document {
+                create(
+                    document: {
+                        documentID: "a",
+                        title: "b"
+                    }
+                ) {
+                    title
+                    document_type
                 }
-            ) {
-                title
-                document_type
             }
         }
     

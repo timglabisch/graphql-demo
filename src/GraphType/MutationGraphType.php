@@ -15,14 +15,12 @@ class MutationGraphType extends ObjectType
         parent::__construct([
             'name' => 'Mutation',
             'fields' => [
-                'document_create' => [
-                    'type' => $typeRegistry->getTypeDocument(),
-                    'args' => ['document' => ['type' => Type::nonNull($typeRegistry->getDocumentMutationType())]],
+                'document' => [
+                    'type' => $typeRegistry->getDocumentMutation()
                 ]
             ],
             'resolveField' => function($val, $args, Context $context, ResolveInfo $info) {
-
-                $a = 0;
+                return [];
             }
         ]);
     }

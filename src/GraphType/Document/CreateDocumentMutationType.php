@@ -3,7 +3,9 @@
 namespace Tg\EasyGraphApi\GraphType\Document;
 
 use GraphQL\Type\Definition\InputObjectType;
+use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
+use Tg\EasyGraphApi\Context;
 use Tg\EasyGraphApi\GraphTypeRegistry;
 
 class CreateDocumentMutationType extends InputObjectType
@@ -20,7 +22,11 @@ class CreateDocumentMutationType extends InputObjectType
                     'title' => [
                         'type' => Type::string(),
                     ]
-                ]
+                ],
+                'resolveField' => function($val, $args, Context $context, ResolveInfo $info) {
+                    return $val[$info->fieldName];
+                }
+
             ]
         );
     }
