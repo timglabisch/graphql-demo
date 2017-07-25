@@ -1,15 +1,14 @@
 <?php
 
-namespace Tg\EasyGraphApi\GraphType\Document;
+namespace Tg\EasyGraphApi\Graph\Document\Type\Input;
 
 use GraphQL\Type\Definition\InputObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Tg\EasyGraphApi\Context;
-use Tg\EasyGraphApi\GraphTypeRegistry;
 use Tg\EasyGraphApi\Helper\SingletonTrait;
 
-class CreateDocumentMutationType extends InputObjectType
+class GraphNewDocumentInputType extends InputObjectType
 {
     use SingletonTrait;
 
@@ -17,7 +16,6 @@ class CreateDocumentMutationType extends InputObjectType
     {
         parent::__construct(
             [
-                'name' => 'CreateDocumentMutationType',
                 'fields' => [
                     'documentID' => [
                         'type' => Type::string(),
@@ -26,7 +24,7 @@ class CreateDocumentMutationType extends InputObjectType
                         'type' => Type::string(),
                     ]
                 ],
-                'resolveField' => function($val, $args, Context $context, ResolveInfo $info) {
+                'resolveField' => function ($val, $args, Context $context, ResolveInfo $info) {
                     return $val[$info->fieldName];
                 }
 

@@ -2,18 +2,18 @@
 
 namespace Tg\EasyGraphApi;
 
-use Tg\EasyGraphApi\GraphType\Document\CreateDocumentMutationType;
-use Tg\EasyGraphApi\GraphType\Document\GraphTypeDocument;
-use Tg\EasyGraphApi\GraphType\Document\MutationDocument;
-use Tg\EasyGraphApi\GraphType\MutationGraphType;
-use Tg\EasyGraphApi\GraphType\QueryGraphType;
+use Tg\EasyGraphApi\Graph\Document\GraphMutationDocument;
+use Tg\EasyGraphApi\Graph\Document\GraphQueryDocumentType;
+use Tg\EasyGraphApi\Graph\Document\Type\Input\GraphNewDocumentInputType;
+use Tg\EasyGraphApi\Graph\GraphMutationType;
+use Tg\EasyGraphApi\Graph\GraphQueryType;
 
 class GraphTypeRegistry
 {
-    /** @var QueryGraphType */
+    /** @var GraphQueryType */
     private $typeQuery;
 
-    /** @var GraphTypeDocument */
+    /** @var GraphQueryDocumentType */
     private $typeDocument;
 
     private $documentMutationType;
@@ -24,26 +24,26 @@ class GraphTypeRegistry
 
     public function getTypeQuery()
     {
-        return $this->typeQuery ?: ($this->typeQuery = new QueryGraphType($this));
+        return $this->typeQuery ?: ($this->typeQuery = new GraphQueryType($this));
     }
 
     public function getMutationType()
     {
-        return $this->mutationType ?: ($this->mutationType = new MutationGraphType($this));
+        return $this->mutationType ?: ($this->mutationType = new GraphMutationType($this));
     }
 
     public function getTypeDocument()
     {
-        return $this->typeDocument ?: ($this->typeDocument = new GraphTypeDocument($this));
+        return $this->typeDocument ?: ($this->typeDocument = new GraphQueryDocumentType($this));
     }
 
     public function getDocumentMutationType()
     {
-        return $this->documentMutationType ?: ($this->documentMutationType = new CreateDocumentMutationType($this));
+        return $this->documentMutationType ?: ($this->documentMutationType = new GraphNewDocumentInputType($this));
     }
 
     public function getDocumentMutation()
     {
-        return $this->documentMutation ?: ($this->documentMutation = new MutationDocument($this));
+        return $this->documentMutation ?: ($this->documentMutation = new GraphMutationDocument($this));
     }
 }

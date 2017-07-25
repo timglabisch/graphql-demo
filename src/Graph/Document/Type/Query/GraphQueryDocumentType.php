@@ -1,16 +1,15 @@
 <?php
 
-namespace Tg\EasyGraphApi\GraphType\Document;
+namespace Tg\EasyGraphApi\Graph\Document\Type\Query;
 
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Tg\EasyGraphApi\Context;
-use Tg\EasyGraphApi\GraphTypeRegistry;
 use Tg\EasyGraphApi\Helper\SingletonTrait;
 use Tg\EasyGraphApi\Requirement\Document\DocumentRequirement;
 
-class GraphTypeDocument extends ObjectType
+class GraphQueryDocumentType extends ObjectType
 {
     use SingletonTrait;
 
@@ -18,7 +17,6 @@ class GraphTypeDocument extends ObjectType
     {
         parent::__construct(
             [
-                'name' => 'document',
                 'fields' => [
                     'document_type' => [
                         'type' => Type::string(),
@@ -27,15 +25,17 @@ class GraphTypeDocument extends ObjectType
                         'type' => Type::string(),
                     ]
                 ],
-                'resolveField' => function(DocumentRequirement $requirement, $args, Context $context, ResolveInfo $info) {
+                'resolveField' => function (DocumentRequirement $requirement, $args, Context $context, ResolveInfo $info) {
 
                     $requirement->addField($info->fieldName);
 
-                    return new \GraphQL\Deferred(function () use ($requirement, $context, $info) {
-                        $context->resolve();
+                    return new \GraphQL\Deferred(
+                        function () use ($requirement, $context, $info) {
+                            $context->resolve();
 
-                        return $requirement->getResolvedValue()[$info->fieldName];
-                    });
+                            return $requirement->getResolvedValue()[$info->fieldName];
+                        }
+                    );
                 }
             ]
         );
