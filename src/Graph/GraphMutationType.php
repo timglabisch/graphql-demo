@@ -4,7 +4,6 @@ namespace Tg\EasyGraphApi\Graph;
 
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
-use Tg\EasyGraphApi\Context;
 use Tg\EasyGraphApi\Graph\Document\GraphMutationDocument;
 use Tg\EasyGraphApi\Helper\SingletonTrait;
 

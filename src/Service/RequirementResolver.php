@@ -1,10 +1,10 @@
 <?php
 
-namespace Tg\EasyGraphApi;
+namespace Tg\EasyGraphApi\Service;
 
 
-use Tg\EasyGraphApi\Requirement\Document\ResolveableInterface;
-use Tg\EasyGraphApi\RequirementResolver\DocumentRequirementResolver;
+use Tg\EasyGraphApi\Document\Service\DocumentRequirementResolver;
+use Tg\EasyGraphApi\Requirement\ResolveableInterface;
 
 class RequirementResolver
 {

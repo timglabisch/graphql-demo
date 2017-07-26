@@ -1,8 +1,9 @@
 <?php
 
-namespace Tg\EasyGraphApi;
+namespace Tg\EasyGraphApi\Graph;
 
 use Tg\EasyGraphApi\Requirement\ResolveableInterface;
+use Tg\EasyGraphApi\Service\RequirementResolver;
 
 class Context
 {

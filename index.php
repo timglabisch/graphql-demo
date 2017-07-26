@@ -2,10 +2,10 @@
 
 use GraphQL\GraphQL;
 use GraphQL\Schema;
-use Tg\EasyGraphApi\Context;
+use Tg\EasyGraphApi\Graph\Context;
 use Tg\EasyGraphApi\Graph\GraphMutationType;
 use Tg\EasyGraphApi\Graph\GraphQueryType;
-use Tg\EasyGraphApi\RequirementResolver;
+use Tg\EasyGraphApi\Service\RequirementResolver;
 
 require __DIR__ . '/vendor/autoload.php';
 

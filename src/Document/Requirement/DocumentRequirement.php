@@ -1,6 +1,6 @@
 <?php
 
-namespace Tg\EasyGraphApi\Requirement\Document;
+namespace Tg\EasyGraphApi\Document\Requirement;
 
 use Tg\EasyGraphApi\Requirement\ResolveableInterface;
 use Tg\EasyGraphApi\Requirement\ResolveableTrait;

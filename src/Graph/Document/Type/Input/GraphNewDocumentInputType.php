@@ -5,7 +5,7 @@ namespace Tg\EasyGraphApi\Graph\Document\Type\Input;
 use GraphQL\Type\Definition\InputObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
-use Tg\EasyGraphApi\Context;
+use Tg\EasyGraphApi\Graph\Context;
 use Tg\EasyGraphApi\Helper\SingletonTrait;
 
 class GraphNewDocumentInputType extends InputObjectType

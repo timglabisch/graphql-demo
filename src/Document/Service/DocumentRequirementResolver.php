@@ -1,8 +1,8 @@
 <?php
 
-namespace Tg\EasyGraphApi\RequirementResolver;
+namespace Tg\EasyGraphApi\Document\Service;
 
-use Tg\EasyGraphApi\Requirement\Document\DocumentRequirement;
+use Tg\EasyGraphApi\Document\Requirement\DocumentRequirement;
 use Tg\EasyGraphApi\Requirement\ResolveableInterface;
 use Tg\EasyGraphApi\Service\FieldColumnMap;
 

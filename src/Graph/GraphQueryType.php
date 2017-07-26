@@ -5,10 +5,9 @@ namespace Tg\EasyGraphApi\Graph;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
-use Tg\EasyGraphApi\Context;
+use Tg\EasyGraphApi\Document\Requirement\DocumentRequirement;
 use Tg\EasyGraphApi\Graph\Document\Type\Query\GraphQueryDocumentType;
 use Tg\EasyGraphApi\Helper\SingletonTrait;
-use Tg\EasyGraphApi\Requirement\Document\DocumentRequirement;
 
 class GraphQueryType extends ObjectType
 {

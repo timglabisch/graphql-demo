@@ -6,11 +6,11 @@ namespace Tg\EasyGraphApi\Graph\Document;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
-use Tg\EasyGraphApi\Context;
+use Tg\EasyGraphApi\Document\Requirement\DocumentRequirement;
+use Tg\EasyGraphApi\Graph\Context;
 use Tg\EasyGraphApi\Graph\Document\Type\Input\GraphNewDocumentInputType;
 use Tg\EasyGraphApi\Graph\Document\Type\Query\GraphQueryDocumentType;
 use Tg\EasyGraphApi\Helper\SingletonTrait;
-use Tg\EasyGraphApi\Requirement\Document\DocumentRequirement;
 
 class GraphMutationDocument extends ObjectType
 {
