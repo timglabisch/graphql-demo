@@ -2,10 +2,11 @@
 
 use GraphQL\GraphQL;
 use GraphQL\Schema;
+use Tg\Document\Service\DocumentRequirementResolver;
 use Tg\EasyGraphApi\Graph\Context;
 use Tg\EasyGraphApi\Graph\GraphMutationType;
 use Tg\EasyGraphApi\Graph\GraphQueryType;
-use Tg\PersistenceDomain\Service\RequirementResolver;
+use Tg\RequirementDomain\Service\ChainedRequirementResolver;
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -54,7 +55,9 @@ $input = [
     'variables' => []
 ];
 
-$resolver = new RequirementResolver();
+$resolver = new ChainedRequirementResolver([
+    new DocumentRequirementResolver()
+]);
 
 $context = new Context($resolver);
 //$result = GraphQL::execute($schema, $input['query'], null, $context, $input['variables']);

@@ -2,18 +2,18 @@
 
 namespace Tg\EasyGraphApi\Graph;
 
-use Tg\PersistenceDomain\Requirement\ResolveableInterface;
-use Tg\PersistenceDomain\Service\RequirementResolver;
+use Tg\RequirementDomain\Requirement\ResolveableInterface;
+use Tg\RequirementDomain\Service\ChainedRequirementResolver;
 
 class Context
 {
     /** @var ResolveableInterface[] */
     private $requirements = [];
 
-    /** @var RequirementResolver */
+    /** @var ChainedRequirementResolver */
     private $requirementResolver;
 
-    public function __construct(RequirementResolver $requirementResolver)
+    public function __construct(ChainedRequirementResolver $requirementResolver)
     {
         $this->requirementResolver = $requirementResolver;
     }

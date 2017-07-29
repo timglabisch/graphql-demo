@@ -1,6 +1,6 @@
 <?php
 
-namespace Tg\PersistenceDomain\Requirement;
+namespace Tg\RequirementDomain\Requirement;
 
 
 interface ResolveableInterface

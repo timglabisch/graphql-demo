@@ -1,21 +1,19 @@
 <?php
 
-namespace Tg\PersistenceDomain\Service;
+namespace Tg\RequirementDomain\Service;
 
+use Tg\RequirementDomain\Requirement\ResolveableInterface;
+use Tg\RequirementDomain\RequirementResolverInterface;
 
-use Tg\Document\Service\DocumentRequirementResolver;
-use Tg\PersistenceDomain\Requirement\ResolveableInterface;
-
-class RequirementResolver
+class ChainedRequirementResolver implements RequirementResolverInterface
 {
-    /** @var DocumentRequirementResolver[] */
+    /** @var RequirementResolverInterface[] */
     private $resolvers = [];
 
-    public function __construct()
+    /** @param $resolvers RequirementResolverInterface[] */
+    public function __construct(array $resolvers)
     {
-        $this->resolvers = [
-            new DocumentRequirementResolver()
-        ];
+        $this->resolvers = $resolvers;
     }
 
     /**

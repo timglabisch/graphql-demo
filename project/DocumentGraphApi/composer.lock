@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "057784059b0069f5d1d35f165f791464",
+    "content-hash": "cc91acdd13bb573607a8066491ec99f4",
     "packages": [
         {
             "name": "tg/document",
@@ -12,7 +12,7 @@
             "dist": {
                 "type": "path",
                 "url": "./../../lib/Document",
-                "reference": "679324dfec0c08bbfc5c8d79455bcd624f167216",
+                "reference": "07aafe3721929e0e562ff305aab52d3951d36fde",
                 "shasum": null
             },
             "require": {
@@ -49,18 +49,18 @@
             ]
         },
         {
-            "name": "tg/persistence-domain",
+            "name": "tg/requirement-domain",
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "./../../lib/PersistenceDomain",
-                "reference": "f0e3b0edd50238d805e0272016327564ebe03547",
+                "url": "./../../lib/RequirementDomain",
+                "reference": "47f4c38d47856217de96215dff47d1bd474820d9",
                 "shasum": null
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Tg\\PersistenceDomain\\": "src/"
+                    "Tg\\RequirementDomain\\": "src/"
                 }
             },
             "authors": [
@@ -121,7 +121,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "tg/document": 20,
-        "tg/persistence-domain": 20,
+        "tg/requirement-domain": 20,
         "tg/document-domain": 20
     },
     "prefer-stable": false,
