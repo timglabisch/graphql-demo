@@ -4,7 +4,7 @@ namespace Tg\Document\Service;
 
 use Tg\Document\Requirement\DocumentRequirement;
 use Tg\EasyGraphApi\Service\FieldColumnMap;
-use Tg\Persistence\Requirement\ResolveableInterface;
+use Tg\PersistenceDomain\Requirement\ResolveableInterface;
 
 class DocumentRequirementResolver
 {

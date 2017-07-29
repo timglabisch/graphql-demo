@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ec42559c06eaf64ef033ab49f8a35b5",
+    "content-hash": "057784059b0069f5d1d35f165f791464",
     "packages": [
         {
             "name": "tg/document",
@@ -49,18 +49,18 @@
             ]
         },
         {
-            "name": "tg/persistence",
+            "name": "tg/persistence-domain",
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "./../../lib/Persistence",
-                "reference": "d7cea49582a176d7d9c7e054e29d2cf4ddb50b0e",
+                "url": "./../../lib/PersistenceDomain",
+                "reference": "f0e3b0edd50238d805e0272016327564ebe03547",
                 "shasum": null
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Tg\\Persistence\\": "src/"
+                    "Tg\\PersistenceDomain\\": "src/"
                 }
             },
             "authors": [
@@ -121,7 +121,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "tg/document": 20,
-        "tg/persistence": 20,
+        "tg/persistence-domain": 20,
         "tg/document-domain": 20
     },
     "prefer-stable": false,

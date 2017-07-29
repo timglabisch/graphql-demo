@@ -5,7 +5,7 @@ use GraphQL\Schema;
 use Tg\EasyGraphApi\Graph\Context;
 use Tg\EasyGraphApi\Graph\GraphMutationType;
 use Tg\EasyGraphApi\Graph\GraphQueryType;
-use Tg\Persistence\Service\RequirementResolver;
+use Tg\PersistenceDomain\Service\RequirementResolver;
 
 require __DIR__ . '/vendor/autoload.php';
 

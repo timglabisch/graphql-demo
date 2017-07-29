@@ -1,10 +1,10 @@
 <?php
 
-namespace Tg\Persistence\Service;
+namespace Tg\PersistenceDomain\Service;
 
 
 use Tg\Document\Service\DocumentRequirementResolver;
-use Tg\Persistence\Requirement\ResolveableInterface;
+use Tg\PersistenceDomain\Requirement\ResolveableInterface;
 
 class RequirementResolver
 {

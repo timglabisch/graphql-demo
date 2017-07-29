@@ -2,8 +2,8 @@
 
 namespace Tg\EasyGraphApi\Graph;
 
-use Tg\Persistence\Requirement\ResolveableInterface;
-use Tg\Persistence\Service\RequirementResolver;
+use Tg\PersistenceDomain\Requirement\ResolveableInterface;
+use Tg\PersistenceDomain\Service\RequirementResolver;
 
 class Context
 {

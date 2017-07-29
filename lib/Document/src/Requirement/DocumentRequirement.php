@@ -2,8 +2,8 @@
 
 namespace Tg\Document\Requirement;
 
-use Tg\Persistence\Requirement\ResolveableInterface;
-use Tg\Persistence\Requirement\ResolveableTrait;
+use Tg\PersistenceDomain\Requirement\ResolveableInterface;
+use Tg\PersistenceDomain\Requirement\ResolveableTrait;
 
 class DocumentRequirement implements ResolveableInterface
 {

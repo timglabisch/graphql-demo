@@ -1,6 +1,6 @@
 <?php
 
-namespace Tg\Persistence\Requirement;
+namespace Tg\PersistenceDomain\Requirement;
 
 trait ResolveableTrait
 {
