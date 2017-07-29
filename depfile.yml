@@ -7,19 +7,19 @@ layers:
   - name: '[L]Document'
     collectors:
       - type: className
-        regex: '.*Tg\\Document\.*'
+        regex: '.*Tg\\Document\\.*'
   - name: '[L]DocumentDomain'
     collectors:
       - type: className
-        regex: '.*Tg\\DocumentDomain\.*'
+        regex: '.*Tg\\DocumentDomain\\.*'
   - name: '[L]RequirementDomain'
     collectors:
       - type: className
-        regex: '.*Tg\\RequirementDomain\.*'
+        regex: '.*Tg\\RequirementDomain\\.*'
   - name: '[P]DocumentGraphApi'
     collectors:
       - type: className
-        regex: '.*Tg\\EasyGraphApi\.*'
+        regex: '.*Tg\\EasyGraphApi\\.*'
 ruleset:
   '[L]Document':
     - '[L]RequirementDomain'
