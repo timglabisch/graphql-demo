@@ -1,0 +1,26 @@
+{
+  "name": "tg/project-document-graph-api",
+  "authors": [
+    {
+      "name": "timglabisch",
+      "email": "tim@ainfach.de"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./../../lib/*"
+    }
+  ],
+  "require": {
+    "webonyx/graphql-php": "^0.9.13",
+    "tg/document": "*@dev",
+    "tg/persistence": "*@dev",
+    "tg/document-domain": "*@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tg\\EasyGraphApi\\": "src/"
+    }
+  }
+}

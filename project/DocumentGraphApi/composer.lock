@@ -1,0 +1,131 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "1ec42559c06eaf64ef033ab49f8a35b5",
+    "packages": [
+        {
+            "name": "tg/document",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./../../lib/Document",
+                "reference": "679324dfec0c08bbfc5c8d79455bcd624f167216",
+                "shasum": null
+            },
+            "require": {
+                "tg/document-domain": "*@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tg\\Document\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "timglabisch",
+                    "email": "tim@ainfach.de"
+                }
+            ]
+        },
+        {
+            "name": "tg/document-domain",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./../../lib/DocumentDomain",
+                "reference": "741727383e6350d1e7c49175fa28a79d2207312b",
+                "shasum": null
+            },
+            "type": "library",
+            "authors": [
+                {
+                    "name": "timglabisch",
+                    "email": "tim@ainfach.de"
+                }
+            ]
+        },
+        {
+            "name": "tg/persistence",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./../../lib/Persistence",
+                "reference": "d7cea49582a176d7d9c7e054e29d2cf4ddb50b0e",
+                "shasum": null
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tg\\Persistence\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "timglabisch",
+                    "email": "tim@ainfach.de"
+                }
+            ]
+        },
+        {
+            "name": "webonyx/graphql-php",
+            "version": "v0.9.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webonyx/graphql-php.git",
+                "reference": "8fe26a1a21e3a96e470b5712bc9d392239e8308f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/8fe26a1a21e3a96e470b5712bc9d392239e8308f",
+                "reference": "8fe26a1a21e3a96e470b5712bc9d392239e8308f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.4,<8.0-DEV"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8"
+            },
+            "suggest": {
+                "react/promise": "To use ReactPHP promise adapter"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/deprecated.php"
+                ],
+                "psr-4": {
+                    "GraphQL\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "description": "A PHP port of GraphQL reference implementation",
+            "homepage": "https://github.com/webonyx/graphql-php",
+            "keywords": [
+                "api",
+                "graphql"
+            ],
+            "time": "2017-07-17T17:25:45+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "tg/document": 20,
+        "tg/persistence": 20,
+        "tg/document-domain": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
