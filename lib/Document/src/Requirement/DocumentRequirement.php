@@ -1,9 +1,9 @@
 <?php
 
-namespace Tg\EasyGraphApi\Document\Requirement;
+namespace Tg\Document\Requirement;
 
-use Tg\EasyGraphApi\Requirement\ResolveableInterface;
-use Tg\EasyGraphApi\Requirement\ResolveableTrait;
+use Tg\Persistence\Requirement\ResolveableInterface;
+use Tg\Persistence\Requirement\ResolveableTrait;
 
 class DocumentRequirement implements ResolveableInterface
 {

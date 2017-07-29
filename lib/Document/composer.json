@@ -1,0 +1,23 @@
+{
+  "name": "tg/document",
+  "authors": [
+    {
+      "name": "timglabisch",
+      "email": "tim@ainfach.de"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "path",
+      "url": "./../DocumentDomain"
+    }
+  ],
+  "require": {
+    "tg/document-domain": "*@dev"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tg\\Document\\": "src/"
+    }
+  }
+}

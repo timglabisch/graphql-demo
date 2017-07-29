@@ -1,0 +1,28 @@
+paths:
+  - ./lib
+  - ./project
+exclude_files:
+  - .*vendor.*
+layers:
+  - name: '[L]Document'
+    collectors:
+      - type: className
+        regex: '.*Tg\\Document\.*'
+  - name: '[L]DocumentDomain'
+    collectors:
+      - type: className
+        regex: '.*Tg\\DocumentDomain\.*'
+  - name: '[L]Persistence'
+    collectors:
+      - type: className
+        regex: '.*Tg\\Persistence\.*'
+  - name: '[P]DocumentGraphApi'
+    collectors:
+      - type: className
+        regex: '.*Tg\\Persistence\.*'
+ruleset:
+  Controller:
+    - Service
+  Service:
+    - Repository
+  Repository:

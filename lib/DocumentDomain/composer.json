@@ -1,0 +1,10 @@
+{
+    "name": "tg/document-domain",
+    "authors": [
+        {
+            "name": "timglabisch",
+            "email": "tim@ainfach.de"
+        }
+    ],
+    "require": {}
+}
