@@ -13,6 +13,7 @@
     }
   ],
   "require": {
+    "symfony/property-access": "2.*|3.*",
     "webonyx/graphql-php": "^0.9.13",
     "tg/document": "*@dev",
     "tg/requirement-domain": "*@dev",

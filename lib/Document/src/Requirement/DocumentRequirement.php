@@ -2,6 +2,7 @@
 
 namespace Tg\Document\Requirement;
 
+use Tg\DocumentDomain\DocumentReferenceInterface;
 use Tg\RequirementDomain\Requirement\ResolveableInterface;
 use Tg\RequirementDomain\Requirement\ResolveableTrait;
 
@@ -9,18 +10,18 @@ class DocumentRequirement implements ResolveableInterface
 {
     use ResolveableTrait;
 
-    private $id;
+    private $documentReference;
 
     private $fields;
 
     public function getId(): string
     {
-        return $this->id;
+        return $this->documentReference->getDocumentId();
     }
 
-    public function __construct(string $id)
+    public function __construct(DocumentReferenceInterface $documentReference)
     {
-        $this->id = $id;
+        $this->documentReference = $documentReference;
     }
 
     public function addField(string $field)

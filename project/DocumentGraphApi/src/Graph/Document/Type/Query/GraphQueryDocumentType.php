@@ -5,6 +5,7 @@ namespace Tg\EasyGraphApi\Graph\Document\Type\Query;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
+use Symfony\Component\PropertyAccess\PropertyAccess;
 use Tg\Document\Requirement\DocumentRequirement;
 use Tg\EasyGraphApi\Graph\Context;
 use Tg\EasyGraphApi\Helper\SingletonTrait;
@@ -33,7 +34,12 @@ class GraphQueryDocumentType extends ObjectType
                         function () use ($requirement, $context, $info) {
                             $context->resolve();
 
-                            return $requirement->getResolvedValue()[$info->fieldName];
+                            $accessor = PropertyAccess::createPropertyAccessor();
+
+                            return $accessor->getValue(
+                                $requirement->getResolvedValue(),
+                                $info->fieldName
+                            );
                         }
                     );
                 }

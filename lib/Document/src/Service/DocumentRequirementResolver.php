@@ -3,6 +3,7 @@
 namespace Tg\Document\Service;
 
 use Tg\Document\Collection\FieldColumnMap;
+use Tg\Document\Dto\Document;
 use Tg\Document\Requirement\DocumentRequirement;
 use Tg\RequirementDomain\Requirement\ResolveableInterface;
 
@@ -81,9 +82,20 @@ class DocumentRequirementResolver
     }
 
     /**
-     * @param DocumentRequirement[] $requirements
+     * @return mixed
      */
-    public function resolveAll(array $requirements)
+    public function resolveAndReturn(ResolveableInterface $requirement)
+    {
+        $this->resolveAll([$requirement]);
+
+        return $requirement->getResolvedValue();
+    }
+
+    /**
+     * @param ResolveableInterface[] $requirements
+     * @return ResolveableInterface[]
+     */
+    public function resolveAll(array $requirements): array
     {
         foreach ($requirements as $requirement) {
             if (!$requirement instanceof DocumentRequirement) {
@@ -91,15 +103,16 @@ class DocumentRequirementResolver
             }
         }
 
-
         foreach ($requirements as $requirement) {
             $requirement->resolve(
-                [
+                Document::fromArray([
                     'title' => 'title_' . $requirement->getId(),
                     'document_type' => 'document_type_' . $requirement->getId()
-                ]
+                ])
             );
         }
+
+        return $requirements;
 
     }
 

@@ -6,5 +6,10 @@
             "email": "tim@ainfach.de"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Tg\\DocumentDomain\\": "src/"
+        }
+    },
     "require": {}
 }

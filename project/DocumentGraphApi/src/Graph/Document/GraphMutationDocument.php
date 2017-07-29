@@ -7,6 +7,7 @@ use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Tg\Document\Requirement\DocumentRequirement;
+use Tg\DocumentDomain\DocumentReference;
 use Tg\EasyGraphApi\Graph\Context;
 use Tg\EasyGraphApi\Graph\Document\Type\Input\GraphNewDocumentInputType;
 use Tg\EasyGraphApi\Graph\Document\Type\Query\GraphQueryDocumentType;
@@ -32,7 +33,7 @@ class GraphMutationDocument extends ObjectType
                                 $args['document']['title']
                             ];
 
-                            return $context->addRequirement(new DocumentRequirement($args['document']['documentID']));
+                            return $context->addRequirement(new DocumentRequirement(new DocumentReference($args['document']['documentID'])));
                         }
                     ]
                 ]
