@@ -1,5 +1,5 @@
 {
-    "name": "tg/persistence-domain",
+    "name": "tg/requirement-domain",
     "authors": [
         {
             "name": "timglabisch",
@@ -8,7 +8,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Tg\\PersistenceDomain\\": "src/"
+            "Tg\\RequirementDomain\\": "src/"
         }
     },
     "require": {}

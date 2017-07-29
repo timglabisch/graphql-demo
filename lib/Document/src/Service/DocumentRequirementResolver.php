@@ -2,9 +2,9 @@
 
 namespace Tg\Document\Service;
 
+use Tg\Document\Collection\FieldColumnMap;
 use Tg\Document\Requirement\DocumentRequirement;
-use Tg\EasyGraphApi\Service\FieldColumnMap;
-use Tg\PersistenceDomain\Requirement\ResolveableInterface;
+use Tg\RequirementDomain\Requirement\ResolveableInterface;
 
 class DocumentRequirementResolver
 {

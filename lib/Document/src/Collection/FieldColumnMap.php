@@ -1,6 +1,6 @@
 <?php
 
-namespace Tg\EasyGraphApi\Service;
+namespace Tg\Document\Collection;
 
 class FieldColumnMap
 {
