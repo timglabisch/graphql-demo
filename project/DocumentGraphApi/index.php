@@ -3,6 +3,7 @@
 use GraphQL\GraphQL;
 use GraphQL\Schema;
 use Tg\Document\Service\DocumentRequirementResolver;
+use Tg\DocumentInvoice\Service\DocumentInvoiceRequirementResolver;
 use Tg\EasyGraphApi\Graph\Context;
 use Tg\EasyGraphApi\Graph\GraphMutationType;
 use Tg\EasyGraphApi\Graph\GraphQueryType;
@@ -39,7 +40,7 @@ $input = [
     ',
 
 
-    'query' => '
+    'query1' => '
     
         query {
            document10: document(id: "10") {
@@ -52,15 +53,29 @@ $input = [
         }
         
     ',
+
+    'query2' => '
+    
+        query {
+           invoice10: invoice(id: "10") {
+            title
+           }
+           invoice9: invoice(id: "9") {
+            title
+           }
+        }
+        
+    ',
     'variables' => []
 ];
 
 $resolver = new ChainedRequirementResolver([
-    new DocumentRequirementResolver()
+    $documentResolver = new DocumentRequirementResolver(),
+    new DocumentInvoiceRequirementResolver($documentResolver)
 ]);
 
 $context = new Context($resolver);
 //$result = GraphQL::execute($schema, $input['query'], null, $context, $input['variables']);
-$result = GraphQL::execute($schema, $input['mutation'], null, $context, $input['variables']);
+$result = GraphQL::execute($schema, $input['query2'], null, $context, $input['variables']);
 
 var_dump($result);

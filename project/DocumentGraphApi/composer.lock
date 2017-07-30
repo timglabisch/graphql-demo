@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "830c4241cbe85b15890c82905b3bc948",
+    "content-hash": "6dc689d53ba7d1611d5e24bd8a8035fa",
     "packages": [
         {
             "name": "paragonie/random_compat",
@@ -341,6 +341,54 @@
             ]
         },
         {
+            "name": "tg/document-invoice",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./../../lib/DocumentInvoice",
+                "reference": "58e6955579ade73cc172966342113db6b957c3b9",
+                "shasum": null
+            },
+            "require": {
+                "tg/document": "*@dev",
+                "tg/document-domain": "*@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tg\\DocumentInvoice\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "timglabisch",
+                    "email": "tim@ainfach.de"
+                }
+            ]
+        },
+        {
+            "name": "tg/document-invoice-domain",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./../../lib/DocumentInvoiceDomain",
+                "reference": "1979ae2de56292b9bf76e2e7b7e02f500067d329",
+                "shasum": null
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tg\\DocumentInvoiceDomain\\": "src/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "timglabisch",
+                    "email": "tim@ainfach.de"
+                }
+            ]
+        },
+        {
             "name": "tg/requirement-domain",
             "version": "dev-master",
             "dist": {
@@ -412,9 +460,11 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "tg/document": 20,
         "tg/requirement-domain": 20,
-        "tg/document-domain": 20
+        "tg/document": 20,
+        "tg/document-domain": 20,
+        "tg/document-invoice": 20,
+        "tg/document-invoice-domain": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

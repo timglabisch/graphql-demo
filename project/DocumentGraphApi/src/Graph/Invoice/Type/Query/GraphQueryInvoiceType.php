@@ -1,16 +1,17 @@
 <?php
 
-namespace Tg\EasyGraphApi\Graph\Document\Type\Query;
+namespace Tg\EasyGraphApi\Graph\Invoice\Type\Query;
 
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Tg\DocumentDomain\Requirement\DocumentRequirement;
+use Tg\DocumentInvoiceDomain\Requirement\DocumentInvoiceRequirement;
 use Tg\EasyGraphApi\Graph\Context;
 use Tg\EasyGraphApi\Helper\SingletonTrait;
 
-class GraphQueryDocumentType extends ObjectType
+class GraphQueryInvoiceType extends ObjectType
 {
     use SingletonTrait;
 
@@ -19,14 +20,11 @@ class GraphQueryDocumentType extends ObjectType
         parent::__construct(
             [
                 'fields' => [
-                    'document_type' => [
-                        'type' => Type::string(),
-                    ],
                     'title' => [
                         'type' => Type::string(),
                     ]
                 ],
-                'resolveField' => function (DocumentRequirement $requirement, $args, Context $context, ResolveInfo $info) {
+                'resolveField' => function (DocumentInvoiceRequirement $requirement, $args, Context $context, ResolveInfo $info) {
 
                     $requirement->addField($info->fieldName);
 

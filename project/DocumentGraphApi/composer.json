@@ -15,9 +15,11 @@
   "require": {
     "symfony/property-access": "2.*|3.*",
     "webonyx/graphql-php": "^0.9.13",
-    "tg/document": "*@dev",
     "tg/requirement-domain": "*@dev",
-    "tg/document-domain": "*@dev"
+    "tg/document": "*@dev",
+    "tg/document-domain": "*@dev",
+    "tg/document-invoice": "*@dev",
+    "tg/document-invoice-domain": "*@dev"
   },
   "autoload": {
     "psr-4": {

@@ -5,6 +5,7 @@ namespace Tg\EasyGraphApi\Graph;
 use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 use Tg\EasyGraphApi\Graph\Document\GraphMutationDocument;
+use Tg\EasyGraphApi\Graph\Invoice\GraphMutationInvoice;
 use Tg\EasyGraphApi\Helper\SingletonTrait;
 
 class GraphMutationType extends ObjectType
@@ -19,6 +20,9 @@ class GraphMutationType extends ObjectType
                 'fields' => [
                     'document' => [
                         'type' => GraphMutationDocument::getType()
+                    ],
+                    'invoice' => [
+                        'type' => GraphMutationInvoice::getType()
                     ]
                 ],
                 'resolveField' => function ($val, $args, Context $context, ResolveInfo $info) {
